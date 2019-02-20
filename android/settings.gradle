@@ -1,0 +1,3 @@
+rootProject.name = 'lyjf_webApp'
+
+include ':app'
