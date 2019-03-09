@@ -1,4 +1,6 @@
+import RootNavigator from '../srceens/RootNavigator'
 export default function (url, data) {
+    console.log(data);
 
     return new Promise((res, rej) => {
         fetch(url, {
@@ -9,7 +11,17 @@ export default function (url, data) {
             },
             body: JSON.stringify(data),
         }).
-            then((response) => response.json())
+            then((response) => {
+                if (response.ok) {
+                    // console.log(RootNavigator);
+
+                    return response.json();
+                } else {
+                    console.log(RootNavigator);
+
+                    alert("服务器繁忙，请稍后再试！");
+                }
+            })
             .then((responseJson) => {
                 if (responseJson) {
                     switch (responseJson.code) {
@@ -27,6 +39,7 @@ export default function (url, data) {
                 res({ code: 10000 })
             })
             .catch((error) => {
+                rej(error)
                 console.error("--------------------" + error);
                 throw error;
             });

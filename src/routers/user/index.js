@@ -7,7 +7,7 @@ export default class My extends Component {
     render() {
         console.log("我开始启动调试了");
         return (
-            <Text>我的 </Text>
+            <Text>我的我改了 </Text>
         );
     }
 }

@@ -3,6 +3,7 @@ import { Text, View, Image } from 'react-native';
 import { createBottomTabNavigator, createAppContainer, createStackNavigator } from 'react-navigation';
 import HomeScreen from '../routers/wanbei/hotel/index';
 import MineScreen from '../routers/user';
+import TraveScreen from '../routers/wanbei/travel'
 
 const MainNavigator = createBottomTabNavigator({
     "首页": {
@@ -26,7 +27,7 @@ const MainNavigator = createBottomTabNavigator({
         }
     },
     "用呗": {
-        screen: HomeScreen,
+        screen: TraveScreen,
         navigationOptions: {
             tabBarIcon: ({ focused }) => {
                 if (focused) {
