@@ -1,4 +1,3 @@
-import RootNavigator from '../srceens/RootNavigator'
 export default function (url, data) {
     console.log(data);
 
@@ -17,8 +16,6 @@ export default function (url, data) {
 
                     return response.json();
                 } else {
-                    console.log(RootNavigator);
-
                     alert("服务器繁忙，请稍后再试！");
                 }
             })
@@ -39,8 +36,8 @@ export default function (url, data) {
                 res({ code: 10000 })
             })
             .catch((error) => {
-                rej(error)
-                console.error("--------------------" + error);
+                // rej(error)
+                alert("网络异常,稍后再试！");
                 throw error;
             });
     })

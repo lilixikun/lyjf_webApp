@@ -17,7 +17,7 @@ export default class TravelCard extends PureComponent {
                     <Text style={styles.travelName}>{item.travelName}</Text>
                     <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
                         <View>
-                            <Text style={{ color: color.red, fontSize: 18 }}>{item.singleCost}玩呗</Text>
+                            <Text style={{ color: color.red, fontSize: 18 }}>{item.creditPirce}玩贝</Text>
                             <Text style={{ color: color.base, fontSize: 16 }}>约¥{item.singleCost}</Text>
                         </View>
                         <View style={{ flexDirection: "row", fontSize: 14 }}>

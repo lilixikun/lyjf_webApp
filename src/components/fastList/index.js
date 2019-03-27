@@ -1,13 +1,27 @@
 import React, { Component } from 'react';
-import { View, FlatList, Text } from 'react-native';
+import { View, FlatList, Image, Text, TextInput } from 'react-native';
 import { http } from '../../utils'
+import PropTypes from 'prop-types';
 
 export default class App extends Component {
 
     static defaultProps = {
         url: "",
         data: {},
-        renderItem: ""
+        renderItem: "",
+        ListEmptyComponent: <Image
+            style={{ width: 50, height: 50 }}
+            source={{ uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' }}
+        />,
+        ListHeaderComponent: null
+    }
+
+    static propTypes = {
+        url: PropTypes.string.isRequired,
+        data: PropTypes.object,
+        renderItem: PropTypes.func.isRequired,
+        ListEmptyComponent: PropTypes.element,
+        ListHeaderComponent: PropTypes.element
     }
 
     state = {
@@ -23,10 +37,9 @@ export default class App extends Component {
 
     getDataList(pageNum) {
         this.setState({ refreshing: true })
-        console.log(this.props);
 
         if (!!this.props.url) {
-            http(this.props.url, { pageNum, pageSize: 2, ...this.props.data }).then(({ code, result }) => {
+            http(this.props.url, { pageNum, pageSize: 10, ...this.props.data }).then(({ code, result }) => {
                 if (code === 0) {
                     if (pageNum == 1) {
                         this.setState({
@@ -49,6 +62,7 @@ export default class App extends Component {
 
     }
 
+    //下拉刷新
     handleRefresh = () => {
         const { refreshing } = this.state
         if (!refreshing) {
@@ -56,6 +70,7 @@ export default class App extends Component {
         }
     }
 
+    //上拉加载更多
     handleLoadMore = () => {
         const { hasMore, pageNum, refreshing } = this.state
         if (!refreshing && hasMore) {
@@ -63,6 +78,7 @@ export default class App extends Component {
         }
     }
 
+    //返回cell
     renderItem = ({ item }) => {
         if (this.props.renderItem) {
             return (
@@ -75,7 +91,8 @@ export default class App extends Component {
 
 
     render() {
-        const { dataList, refreshing } = this.state
+        const { dataList, refreshing } = this.state;
+        const { ListEmptyComponent, ListHeaderComponent } = this.props
         console.log(dataList);
 
         return (
@@ -85,6 +102,8 @@ export default class App extends Component {
                     data={dataList}
                     extraData={this.state}
                     refreshing={refreshing}
+                    ListEmptyComponent={ListEmptyComponent}
+                    ListHeaderComponent={ListHeaderComponent}
                     onRefresh={this.handleRefresh}
                     onEndReachedThreshold={0.1} //当距离内容比例不足内容0.1比例时触发onEndReached
                     onEndReached={this.handleLoadMore} //上拉加载数据     

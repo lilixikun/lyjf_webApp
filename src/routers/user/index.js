@@ -1,13 +1,16 @@
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View, Image } from 'react-native';
 
 export default class My extends Component {
 
     render() {
         console.log("我开始启动调试了");
         return (
-            <Text>我的我改了 </Text>
+            <View>
+                <Text>ffff!!!</Text>
+                <Image source={require("../../assets/my/setting.png")} style={{ width: 24, height: 24 }} />
+            </View>
         );
     }
 }
