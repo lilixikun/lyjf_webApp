@@ -9,8 +9,8 @@ export default class App extends Component {
     renderItem = (item) => {
         return (
             <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('detail', {
-                    id: item.id
+                onPress={() => this.props.navigation.navigate('hotleDetail', {
+                    id: item.id, title: "酒店详情"
                 })}>
                 <HCard item={item} />
             </TouchableOpacity>

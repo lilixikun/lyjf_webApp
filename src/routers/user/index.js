@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Image } from 'react-native';
+import { Platform, TouchableOpacity, Text, View, Image } from 'react-native';
 
 export default class My extends Component {
 
@@ -9,7 +9,12 @@ export default class My extends Component {
         return (
             <View>
                 <Text>ffff!!!</Text>
-                <Image source={require("../../assets/my/setting.png")} style={{ width: 24, height: 24 }} />
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('detail', {
+                    id: "19",
+                    title:"酒店详情"
+                })}>
+                    <Image source={require("../../assets/my/setting.png")} style={{ width: 24, height: 24 }} />
+                </TouchableOpacity>
             </View>
         );
     }

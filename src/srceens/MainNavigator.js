@@ -46,7 +46,7 @@ const MainNavigator = createBottomTabNavigator({
             }
         }
     },
-    "我的": {
+    "个人": {
         screen: MineScreen,
         navigationOptions: {
             tabBarIcon: ({ focused }) => {

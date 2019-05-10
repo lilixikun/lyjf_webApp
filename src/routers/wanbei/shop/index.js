@@ -20,7 +20,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <View style={{ flex: 1, backgroundColor: "red" }}>
+            <View style={{ flex: 1 }}>
                 <View style={styles.searchContent}>
                     <TextInput
                         style={{ height: 36, borderColor: 'gray', borderWidth: 1 }}
