@@ -1,9 +1,9 @@
 export default {
-    base: "#62656E",
+    base: "#999999",
     color6B2: "#A6A6B2",
-    theme: "#02AAB0",
+    theme: "#00C1B1",
     white: '#ffffff',
-    black: '#2B2C42',
+    black: '#333333',
     red: "#FF643B",
-    bold: "#333333"
+    bold: "#000000"
 }

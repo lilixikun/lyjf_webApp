@@ -21,12 +21,6 @@ export default class App extends Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <View style={styles.searchContent}>
-                    <TextInput
-                        style={{ height: 36, borderColor: 'gray', borderWidth: 1 }}
-                    />
-                    <Text>购物车</Text>
-                </View>
                 <FlatList
                     url={api.shop.shopList}
                     renderItem={(item) => this.renderItem(item)}

@@ -1,20 +1,19 @@
-"use strict"
 
 import { Dimensions, StatusBar, Platform, PixelRatio } from 'react-native'
 
 //UI设计图的宽度
-const designWidth = 750
+const designWidth = 375
 //UI设计图的高度
-const designHeight = 1334
+const designHeight = 667
 
 //手机屏幕的宽度
 export const width = Dimensions.get('window').width;
 //手机屏幕的高度
 export const height = Dimensions.get('window').height;
 //计算手机屏幕宽度对应设计图宽度的单位宽度
-export const unitWidth = width / designWidth
+export const unitWidth = 1 / designWidth * width;
 //计算手机屏幕高度对应设计图高度的单位高度
-export const unitHeight = height / designHeight
+export const unitHeight = height / designHeight;
 
 export const statusBarHeight = getStatusBarHeight();
 export const safeAreaViewHeight = isIphoneX() ? 34 : 0

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Image } from 'react-native';
 import { createBottomTabNavigator, createAppContainer, createStackNavigator } from 'react-navigation';
-import HomeScreen from '../routers/wanbei/hotel/index';
+import HomeScreen from '../routers/home';
 import MineScreen from '../routers/user';
 import UsedScreen from '../routers/wanbei'
 

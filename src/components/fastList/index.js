@@ -13,7 +13,11 @@ export default class App extends Component {
             style={{ width: 50, height: 50 }}
             source={{ uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png' }}
         />,
-        ListHeaderComponent: null
+        ListHeaderComponent: null,
+        style: {
+            backgroundColor: "#FFFFFF"
+        }
+
     }
 
     static propTypes = {
@@ -21,7 +25,8 @@ export default class App extends Component {
         data: PropTypes.object,
         renderItem: PropTypes.func.isRequired,
         ListEmptyComponent: PropTypes.element,
-        ListHeaderComponent: PropTypes.element
+        ListHeaderComponent: PropTypes.element,
+        backgroundColor: PropTypes.object
     }
 
     state = {
@@ -98,11 +103,11 @@ export default class App extends Component {
         return (
             <View>
                 <FlatList
-                    style={{ backgroundColor: "#FFFFFF" }}
+                    style={{ ...this.props.style }}
                     data={dataList}
                     extraData={this.state}
                     refreshing={refreshing}
-                    ListEmptyComponent={ListEmptyComponent}
+                    //ListEmptyComponent={ListEmptyComponent}
                     ListHeaderComponent={ListHeaderComponent}
                     onRefresh={this.handleRefresh}
                     onEndReachedThreshold={0.1} //当距离内容比例不足内容0.1比例时触发onEndReached

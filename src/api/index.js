@@ -1,7 +1,6 @@
-const baseUrl = "http://203.110.179.27:60409"
+const baseUrl = "https://app.wedotting.com"
 //http://appuat.wedotting.com
 //http://203.110.179.27:60409
-
 export default {
     hotel: {
         findHotelById: baseUrl + "/lyjfapp/api/v1/hotel/findHotelById",
@@ -24,5 +23,19 @@ export default {
         clearCart: baseUrl + "/lyjfapp/api/v1/cart/clearCart",   //清空购物车
         listMyCart: baseUrl + "/lyjfapp/api/v1/cart/listMyCart",  //我的购物车
         addOrder: baseUrl + "/lyjfapp/api/v1/shop/addOrder"
+    },
+    // restaurant: {
+    //     getDataList:baseUrl+ "/lyjfapp/api/v1/restaurant/listRestaurantByConditionForApp",
+    //     getDetail:baseUrl+ "/lyjfapp/api/v1/restaurant/findRestaurantByIdForApp"
+    // },
+
+    video: {
+        videoList: baseUrl + "/lyjfapp/api/v1/video/homeImage/list"
+    },
+    //榜单
+    ranklist: {
+        destinationList: baseUrl + "/lyjfapp/api/v1/ranklist/findAllDestinationList",  //目的地列表
+        getRankList: baseUrl + "/lyjfapp/api/v1/ranklist/findByCondition",  //根据目的地查询绑定
+        findRankDetail: baseUrl + "/lyjfapp/api/v1/ranklistDetail/findById" //查询绑定详情 
     }
 }

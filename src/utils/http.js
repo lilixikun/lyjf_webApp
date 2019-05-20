@@ -1,5 +1,5 @@
 export default function (url, data) {
-    console.log(data);
+    console.log(url, data);
 
     return new Promise((res, rej) => {
         fetch(url, {
@@ -37,7 +37,7 @@ export default function (url, data) {
             })
             .catch((error) => {
                 // rej(error)
-                alert("网络异常,稍后再试！");
+                alert("网络异常,稍后再试!");
                 throw error;
             });
     })

@@ -3,14 +3,14 @@ import { View, Text } from 'react-native'
 import ScrollableTabView, { ScrollableTabBar, DefaultTabBar } from 'react-native-scrollable-tab-view';
 import { color } from '../../utils'
 import HotelPage from './hotel'
-import TravelPage from './travel'
+//import RestaurantPage from './restaurant'
 import ShopPage from './shop'
 export default class Index extends Component {
 
     renderScrollableTab() {
         return (
             <ScrollableTabView
-                initialPage={2}
+                initialPage={0}
                 //可自定义renderTabBar 
                 renderTabBar={() => <ScrollableTabBar />}
                 style={{ borderBottomColor: "red" }}
@@ -21,7 +21,7 @@ export default class Index extends Component {
                 tabBarUnderlineStyle={{ backgroundColor: color.theme, height: 1 }}  //设置下划线样式
             >
                 <HotelPage tabLabel="酒店" {...this.props} />
-                <TravelPage tabLabel="定制游" {...this.props} />
+                <Text tabLabel="餐厅">餐厅</Text>
                 <ShopPage tabLabel="商城" {...this.props} />
 
             </ScrollableTabView>
