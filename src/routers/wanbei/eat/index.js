@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
+import { View, TouchableOpacity, StyleSheet, Image, Text } from 'react-native';
 import FlatList from '../../../components/fastList'
-import { TouchableOpacity, Text, View, Image, StyleSheet } from 'react-native';
-import { color } from '../../../utils'
 import api from '../../../api';
+import { color } from '../../../utils';
 
 export default class App extends Component {
 
     renderItem = (item) => {
         return (
-            <TouchableOpacity
-                onPress={() => this.props.navigation.navigate('hotleDetail', {
-                    id: item.id, title: "酒店详情"
-                })}>
+            <TouchableOpacity >
                 <View style={styles.hotelcard}>
-                    <Image style={styles.img} source={{ uri: item.imageList[0].url || "" }} />
+                    <Image style={styles.img} source={{ uri: item.restaurantImageList[0].url || "" }} />
                     <View style={styles.cardContent}>
-                        <Text style={styles.hotelName}>{item.hotelName}</Text>
-                        <Text style={{ color: color.red, fontSize: 18 }}>{item.price}玩呗</Text>
+                        <Text style={styles.hotelName}>{item.restaurantName}</Text>
                         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-                            <Text style={{ color: color.base, fontSize: 14 }}>{item.rmbprice}</Text>
+                            <Text style={{ color: color.red, fontSize: 16 }}>{item.perCapita}玩呗</Text>
                             <View style={{ flexDirection: 'row' }}>
                                 <Text style={{ color: color.theme }}>{item.collectCount}</Text>
                                 <Text>收藏</Text>
@@ -33,10 +29,12 @@ export default class App extends Component {
 
     render() {
         return (
-            <FlatList
-                url={api.hotel.findHotelList}
-                renderItem={(item) => this.renderItem(item)}
-            />
+            <View style={{ flex: 1 }}>
+                <FlatList
+                    url={api.restaurant.getDataList}
+                    renderItem={(item) => this.renderItem(item)}
+                />
+            </View>
         )
     }
 }

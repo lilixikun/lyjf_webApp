@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
-import { color } from '../../utils'
+import { color } from '../utils'
 
 export default class HotelCard extends PureComponent {
 

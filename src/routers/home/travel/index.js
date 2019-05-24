@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 import FlatList from '../../../components/fastList'
-import TravelCard from '../../../components/t-card'
+import TravelCard from '../../../components/travelCard'
 import api from '../../../api';
 
 export default class App extends Component {

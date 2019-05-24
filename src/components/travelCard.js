@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
-import { color, screen, adapterUtil } from '../../utils'
+import { color, adapterUtil } from '../utils'
 const baseFont = adapterUtil.unitWidth;
 export default class TravelCard extends PureComponent {
 

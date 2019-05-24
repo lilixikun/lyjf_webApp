@@ -13,7 +13,7 @@ export default class Home extends Component {
     static navigationOptions = ({ navigation }) => {
         const { params } = navigation.state;
         return {
-            //title: params.title ? params.title : "酒店",
+            title: params.title ? params.title : "酒店详情",
             headerTitleStyle: { flex: 2, textAlign: 'center' },
             headerRight: (
                 <View style={{ flexDirection: "row" }}>
@@ -50,7 +50,6 @@ export default class Home extends Component {
 
         return (
             <View {...this.props} style={{ flex: 1 }}>
-                <Text>Count: {this.state.count}</Text>
                 {this.props.children}
             </View>
         );

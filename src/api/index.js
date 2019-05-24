@@ -1,6 +1,5 @@
-const baseUrl = "https://app.wedotting.com"
-//http://appuat.wedotting.com
-//http://203.110.179.27:60409
+import baseUrl from './baseUrl'
+
 export default {
     hotel: {
         findHotelById: baseUrl + "/lyjfapp/api/v1/hotel/findHotelById",
@@ -24,10 +23,10 @@ export default {
         listMyCart: baseUrl + "/lyjfapp/api/v1/cart/listMyCart",  //我的购物车
         addOrder: baseUrl + "/lyjfapp/api/v1/shop/addOrder"
     },
-    // restaurant: {
-    //     getDataList:baseUrl+ "/lyjfapp/api/v1/restaurant/listRestaurantByConditionForApp",
-    //     getDetail:baseUrl+ "/lyjfapp/api/v1/restaurant/findRestaurantByIdForApp"
-    // },
+    restaurant: {
+        getDataList: baseUrl + "/lyjfapp/api/v1/restaurant/listRestaurantByConditionForApp",
+        getDetail: baseUrl + "/lyjfapp/api/v1/restaurant/findRestaurantByIdForApp"
+    },
 
     video: {
         videoList: baseUrl + "/lyjfapp/api/v1/video/homeImage/list"

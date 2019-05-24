@@ -12,9 +12,9 @@ export default class App extends Component {
             <TouchableOpacity>
                 <View style={styles.palyCard}>
                     <Image source={{ uri: item.homeImageUrl }} style={styles.img} resizeMode="cover"></Image>
-                    <View style={styles.footer}>
+                    {/* <View style={styles.footer}>
                         <Text style={styles.videoTitle}>{item.videoTitle}</Text>
-                    </View>
+                    </View> */}
                 </View>
             </TouchableOpacity>
         )
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     palyCard: {
         flex: 1,
         flexDirection: "column",
-        marginHorizontal: 10,
+        marginHorizontal: 8,
         marginTop: 16,
     },
     img: {

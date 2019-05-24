@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, FlatList, Image, Text, TextInput } from 'react-native';
-import { http } from '../../utils'
+import { http } from '../utils'
 import PropTypes from 'prop-types';
 
 export default class App extends Component {

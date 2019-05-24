@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ScrollView, View, FlatList, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
-import { color, screen, adapterUtil, http } from '../../../utils'
+import { color, adapterUtil, http } from '../../../utils'
 import api from '../../../api';
 const baseFont = adapterUtil.unitWidth;
 
@@ -38,8 +38,8 @@ export default class App extends Component {
         return (
             <TouchableOpacity>
                 <View style={styles.rankCard}>
-                    <Image source={{ uri: item.imageFullUrl }} style={{ width: 100 * baseFont, height: 100 * baseFont }} />
-                    <Text style={styles.topicName} numberOfLines={2}>{item.topicName}</Text>
+                    <Image source={{ uri: item.imageFullUrl }} style={styles.img} />
+                    {/* <Text style={styles.topicName} numberOfLines={2}>{item.topicName}</Text> */}
                 </View>
             </TouchableOpacity>
         )
@@ -117,10 +117,17 @@ const styles = StyleSheet.create({
     },
     rankCard: {
         backgroundColor: color.white,
-        marginHorizontal: 16 * baseFont,
+        marginHorizontal: 10 * baseFont,
         marginBottom: 10,
         flexDirection: "row"
     },
+
+    img: {
+        width: '100%',
+        height: 100 * baseFont,
+        borderRadius: 10,
+    },
+
     topicName: {
         width: 134 * baseFont,
         marginTop: 17 * baseFont,
