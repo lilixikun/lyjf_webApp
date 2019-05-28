@@ -1,5 +1,5 @@
 
-import { Dimensions, StatusBar, Platform, PixelRatio } from 'react-native'
+import { Dimensions, StatusBar, Platform, PixelRatio, NetInfo } from 'react-native'
 
 //UI设计图的宽度
 const designWidth = 375
@@ -41,4 +41,13 @@ export function getStatusBarHeight() {
         return 44
     }
     return 20
+}
+
+/**
+ * 获取网络状态
+ */
+export function getNetInfo() {
+    NetInfo.fetch().done((status) => {
+
+    })
 }
